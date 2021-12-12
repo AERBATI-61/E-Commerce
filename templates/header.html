@@ -1,0 +1,279 @@
+{% load static %}
+<header id="header" class=" variantleft type_3">
+			<!-- Header Top -->
+			<div class="header-top compact-hidden">
+				<div class="container">
+					<div class="row">
+						<div class="header-top-left  col-lg-4  hidden-sm col-md-5 hidden-xs">
+							<ul class="list-inlines">
+								<li class="hidden-xs" >
+									<div class="welcome-msg">
+										<ul class="list-msg">
+											<li><label class="label-msg">Bu site sonuna kadar bitecek</label> <a href="#">insallah</a></li>
+											<li><label class="label-msg">Tomorrow</label> <a href="#">Laten ipsum dolor sit amet. In gravida pellen</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+
+						</div>
+						<div class="header-top-right collapsed-block col-lg-8 col-sm-12 col-md-7 col-xs-12 ">
+							<h5 class="tabBlockTitle visible-xs">More<a class="expander " href="#TabBlock-1"><i class="fa fa-angle-down"></i></a></h5>
+							<div class="tabBlock" id="TabBlock-1">
+								<ul class="top-link list-inline">
+									<li class="account" id="my_account">
+										<a href="#" title="My Account" class="btn btn-xs dropdown-toggle" data-toggle="dropdown"> <span >Hesabim</span> <span class="fa fa-angle-down"></span></a>
+										<ul class="dropdown-menu ">
+                                            {% if request.user.is_authenticated %}
+                                                <li><a href="#"><i class="fa fa-person"></i>{{ request.user.username }}</a></li>
+                                                <li><a href="{% url 'logout' %}"><i class="fa fa-pencil-square-o"></i> Cikis Yap</a></li>
+                                            {% else %}
+                                                <li><a href="{% url 'register' %}"><i class="fa fa-user"></i> Kayit Ol</a></li>
+                                                <li><a href="{% url 'login' %}"><i class="fa fa-pencil-square-o"></i> Giris Yap</a></li>
+                                            {% endif %}
+										</ul>
+									</li>
+
+									<li class="checkout hidden"><a href="checkout.html" class="top-link-checkout" title="Checkout"><span >Checkout</span></a></li>
+									<li class="login hidden"><a href="cart.html" title="Shopping Cart"><span >Shopping Cart</span></a></li>
+
+									<li class="form-group languages-block ">
+										<form action="index.html" method="post" enctype="multipart/form-data" id="bt-language">
+											<a class="btn btn-xs dropdown-toggle" data-toggle="dropdown">
+												<img src="{% static 'image/demo/flags/gb.png' %}">
+												<span class="">English</span>
+												<span class="fa fa-angle-down"></span>
+											</a>
+											<ul class="dropdown-menu">
+												<li><a href="index.html"><img class="image_flag" src="{% static 'image/demo/flags/gb.png' %}" /> English </a></li>
+											</ul>
+										</form>
+									</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //Header Top -->
+			<!-- Header center -->
+			<div class="header-center">
+				<div class="container">
+					<div class="row">
+						<!-- Search -->
+						<div class="col-sm-4 header_search">
+							<div id="sosearchpro" class="search-pro">
+								<form method="GET" action="index.html">
+									<div id="search0" class="search input-group">
+										<div class="select_category filter_type  icon-select">
+											<select class="no-border" name="category_id">
+												<option value="0">All Category</option>
+												<option value="20">Desktops</option>
+											</select>
+										</div>
+
+										<input class="autosearch-input form-control" type="text" value="" size="50" autocomplete="off" placeholder="Search" name="search">
+										<span class="input-group-btn">
+										<button type="submit" class="button-search btn btn-primary" name="submit_search"><i class="fa fa-search"></i></button>
+										</span>
+									</div>
+									<input type="hidden" name="route" value="product/search" />
+								</form>
+							</div>
+						</div>
+						<!-- //end Search -->
+						<!-- Logo -->
+						<div class="navbar-logo col-sm-4 col-xs-12 text-center">
+							<a href="home3.html"><img class="lazyload" data-sizes="auto" src="{% static 'image/demo/logos/theme_logo.png' %}" /></a>
+						</div>
+						<!-- //End Logo -->
+						<!-- Phone -->
+						<div class="header-center-right col-sm-4">
+							<div class="hidden-xs">
+								<div class="phone-contact hidden-xs">
+									<div class="inner-info">
+										<h2>Hotline:</h2><p>(801) 2345 - 6789</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //End Phone -->
+					</div>
+				</div>
+			</div>
+			<!-- //Header center -->
+			<!-- Header Bottom -->
+			<div class="header-bottom compact-hidden">
+				<div class="container">
+				<div class="header-bottom-inner">
+					<div class="row">
+						<div class="header-bottom-menu col-md-10 col-sm-9 col-xs-4">
+							<div class="responsive so-megamenu  megamenu-style-dev">
+								<nav class="navbar-default">
+									<div class=" container-megamenu  horizontal">
+										<div class="navbar-header">
+											<button type="button" id="show-megamenu" data-toggle="collapse" class="navbar-toggle">
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>
+											</button>
+										</div>
+
+										<div class="megamenu-wrapper ">
+											<span id="remove-megamenu" class="fa fa-times"></span>
+											<div class="megamenu-pattern">
+												<div class="container">
+													<ul class="megamenu " data-transition="slide" data-animationtime="250">
+														<li class="home hover">
+															<a href="index.html">Home <b class="caret"></b></a>
+															<div class="sub-menu" style="width:100%;" >
+																<div class="content" >
+																	<div class="row">
+
+																		<div class="col-md-3">
+																			<a href="home10.html" class="image-link">
+																				<span class="thumbnail">
+																					<img class="img-responsive img-border lazyload" data-sizes="auto" src="{% static 'image/demo/menu/home-10.jpg' %}">
+																					<span class="btn btn-default">Read More</span>
+																				</span>
+																				<h3 class="figcaption">Home page - Layout 10</h3>
+																			</a>
+
+																		</div>
+
+
+																	</div>
+																</div>
+															</div>
+														</li>
+														<li class="with-sub-menu hover">
+															<p class="close-menu"></p>
+															<a href="#" class="clearfix">
+																<strong>
+
+																	Features
+																</strong>
+
+																<b class="caret"></b>
+															</a>
+															<div class="sub-menu" style="width: 100%; right: auto;">
+																<div class="content" >
+																	<div class="row">
+																		<div class="col-md-3">
+																			<div class="column">
+																				<a href="#" class="title-submenu">Listing pages</a>
+																				<div>
+																					<ul class="row-list">
+																						<li><a href="../category/templates/category.html">Category Page 1 </a></li>
+																						<li><a href="category-v2.html">Category Page 2</a></li>
+																						<li><a href="category-v3.html">Category Page 3</a></li>
+																					</ul>
+
+																				</div>
+																			</div>
+																		</div>
+
+																	</div>
+																</div>
+															</div>
+														</li>
+
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</nav>
+							</div>
+						</div>
+
+						<!-- Cart Pro-->
+						<div class="block-cart col-md-2 col-sm-3 col-xs-8">
+							<div class="block-cart">
+								<!--cart-->
+								<div class="shopping_cart pull-right">
+									<div id="cart" class=" btn-group btn-shopping-cart">
+										<a data-loading-text="Loading..." class="btn-group top_cart dropdown-toggle" data-toggle="dropdown">
+											<div class="shopcart">
+												<span class="handle pull-left"></span>
+												<span class="text-shopping-cart hidden-xs">	My cart	</span>
+												<span class="total-shopping-cart cart-total-full">	 02</span>
+											</div>
+										</a>
+										<ul class="tab-content content dropdown-menu pull-right shoppingcart-box" role="menu">
+											<li>
+												<table class="table table-striped">
+													<tbody>
+														<tr>
+															<td class="text-center" style="width:70px">
+																<a href="product.html"> <img class="lazyload preview" data-sizes="auto" src="{% static 'image/demo/shop/product/35.jpg' %}"> </a>
+															</td>
+															<td class="text-left"> <a class="cart_product_name" href="product.html">Filet Mign</a> </td>
+															<td class="text-center"> x1 </td>
+															<td class="text-center"> $1,202.00 </td>
+															<td class="text-right">
+																<a href="product.html" class="fa fa-edit"></a>
+															</td>
+															<td class="text-right">
+																<a onclick="cart.remove('2');" class="fa fa-times fa-delete"></a>
+															</td>
+														</tr>
+														<tr>
+															<td class="text-center" style="width:70px">
+																<a href="product.html"> <img class="lazyload preview" data-sizes="auto" src="{% static 'image/demo/shop/product/141.jpg' %}"> </a>
+															</td>
+															<td class="text-left"> <a class="cart_product_name" href="product.html">Canon EOS 5D</a> </td>
+															<td class="text-center"> x1 </td>
+															<td class="text-center"> $60.00 </td>
+															<td class="text-right">
+																<a href="product.html" class="fa fa-edit"></a>
+															</td>
+															<td class="text-right">
+																<a onclick="cart.remove('1');" class="fa fa-times fa-delete"></a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</li>
+											<li>
+												<div>
+													<table class="table table-bordered">
+														<tbody>
+															<tr>
+																<td class="text-left"><strong>Sub-Total</strong>
+																</td>
+																<td class="text-right">$1,060.00</td>
+															</tr>
+															<tr>
+																<td class="text-left"><strong>Eco Tax (-2.00)</strong>
+																</td>
+																<td class="text-right">$2.00</td>
+															</tr>
+															<tr>
+																<td class="text-left"><strong>VAT (20%)</strong>
+																</td>
+																<td class="text-right">$200.00</td>
+															</tr>
+															<tr>
+																<td class="text-left"><strong>Total</strong>
+																</td>
+																<td class="text-right">$1,262.00</td>
+															</tr>
+														</tbody>
+													</table>
+													<p class="text-center"> <a class="btn view-cart" href="cart.html"><i class="fa fa-shopping-cart"></i>View Cart</a>&nbsp;&nbsp;&nbsp; <a class="btn btn-mega checkout-cart" href="checkout.html"><i class="fa fa-share"></i>Checkout</a> </p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!--//cart-->
+							</div>
+						</div>
+						<!-- //End Cart Pro -->
+					</div>
+				</div>
+				</div>
+			</div>
+		</header>
